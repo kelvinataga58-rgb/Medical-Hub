@@ -1,29 +1,90 @@
-import React, { useState } from "react";
 
-function BookAppointment() {
-  const [doctor, setDoctor] = useState("");
-  const [date, setDate] = useState("");
+import { useState } from "react";
+
+const BookAppointment = () => {
+  const [form, setForm] = useState({
+    doctor: "",
+    date: "",
+    time: "",
+    reason: "",
+  });
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("Appointment booked successfully!");
+  };
 
   return (
-    <div className="container">
-      <div className="card">
-        <h2>Book Appointment</h2>
+    <div className="page-content">
+    <div style={styles.container}>
+      <h1>Book Appointment</h1>
 
-        <label>Select Doctor</label>
-        <select onChange={(e) => setDoctor(e.target.value)}>
-          <option value="">Choose...</option>
-          <option>Dr. Amina - General Physician</option>
-          <option>Dr. Kamau - Cardiologist</option>
-          <option>Dr. Otieno - Dermatologist</option>
+      <form style={styles.card} onSubmit={handleSubmit}>
+        <select name="doctor" onChange={handleChange} style={styles.input}>
+          <option>Select Doctor</option>
+          <option>Dr. Sarah Johnson</option>
+          <option>Dr. Emily Williams</option>
         </select>
 
-        <label>Select Date</label>
-        <input type="date" onChange={(e) => setDate(e.target.value)} />
+        <input
+          type="date"
+          name="date"
+          onChange={handleChange}
+          style={styles.input}
+        />
 
-        <button>Confirm Booking</button>
-      </div>
+        <input
+          type="time"
+          name="time"
+          onChange={handleChange}
+          style={styles.input}
+        />
+
+        <textarea
+          name="reason"
+          placeholder="Reason for visit"
+          onChange={handleChange}
+          style={styles.input}
+        />
+
+        <button style={styles.button}>Book Appointment</button>
+      </form>
+      
     </div>
+  </div>
   );
-}
+};
+
+const styles = {
+  container: { padding: "30px" },
+  card: {
+    background: "white",
+    padding: "20px",
+    borderRadius: "12px",
+    maxWidth: "400px",
+    boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+  },
+  
+  input: {
+    width: "100%",
+    padding: "10px",
+    marginBottom: "15px",
+    borderRadius: "8px",
+    border: "1px solid #ddd",
+  },
+  button: {
+    width: "100%",
+    padding: "12px",
+    background: "#1e3a8a",
+    color: "white",
+    border: "none",
+    borderRadius: "8px",
+  },
+  
+};
 
 export default BookAppointment;

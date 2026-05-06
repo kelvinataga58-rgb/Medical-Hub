@@ -10,6 +10,7 @@ function Premium() {
   };
 
   return (
+  <div className="page-content">
     <div className="container">
       <div className="card">
         <h2>Premium Plan</h2>
@@ -24,6 +25,7 @@ function Premium() {
         <button onClick={handlePayment}>Upgrade Now</button>
       </div>
     </div>
+  </div>
   );
 }
 

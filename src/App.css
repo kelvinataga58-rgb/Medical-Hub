@@ -191,3 +191,73 @@ button:hover {
 .stat-card:hover {
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
+
+/* Center the login form in the main content area */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh; /* Keeps it centered vertically */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-container h2 {
+  color: #006699; /* Matching your sidebar blue */
+  margin-bottom: 20px;
+}
+
+/* Style the input fields */
+.login-container input {
+  width: 300px;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+}
+
+.login-container input:focus {
+  border-color: #006699;
+}
+
+/* Style the Login button */
+.login-container button {
+  width: 325px;
+  padding: 12px;
+  background-color: #006699;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.login-container button:hover {
+  background-color: #004d73;
+}
+
+/* Style the links */
+.login-container p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.login-container a {
+  color: #006699;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-container a:hover {
+  text-decoration: underline;
+}
+
+
+.main-content {
+  flex: 1;
+  min-height: 100vh;
+  background-color: #f4f7f9;
+  padding: 40px;
+}
